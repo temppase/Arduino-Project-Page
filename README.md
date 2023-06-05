@@ -6,11 +6,11 @@ The purpose is to move the camera on the rail in intervals. The necessary parame
 
 ### Equipments
 
-[x] Arduino Uno
-[x] A4988 Driver
-[x] Stepper motor 39BYGH 405B
-[x] Rail
-[ ] Limit switches (Missing!!!) 
+- [x] Arduino Uno
+- [x] A4988 Driver
+- [x] Stepper motor 39BYGH 405B
+- [x] Rail
+- [ ] Limit switches (Missing!!!) 
 
 ### Requirements
 
