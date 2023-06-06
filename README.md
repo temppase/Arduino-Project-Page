@@ -29,6 +29,14 @@ I'll add some images and code during the process...
 
 ![Interface](img/Interface.png)
 
+#### Requirements
+
+- All TextBoxes must be filled (zero if neccessary)
+- Play and pause (toggle button)
+- Stop and reset (toggle button)
+- Direction change and offset
+- Some info print (request response)
+
 ### Links
 
 [WinForm app](https://github.com/temppase/UnoControlApp)
