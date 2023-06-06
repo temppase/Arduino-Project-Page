@@ -21,9 +21,13 @@ The purpose is to move the camera on the rail in intervals. The necessary parame
   - direction
   - start position
   - start and end condition
-- Stop process if need
+- Pause, stop and reset process if need
 
 I'll add some images and code during the process...
+
+### Interface
+
+![Interface](img/Interface.png)
 
 ### Links
 
