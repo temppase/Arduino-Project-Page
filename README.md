@@ -61,10 +61,27 @@ I start to build arduino code
 
 ### Notes
 
-Project isn't ready yet but I believe it will be complete in the first week of July.
+- Project isn't ready yet but I believe it will be complete in the first week of July.
+- Stepper motor drive about 2,25 mm out of the start point. That will cause zero point move if not drive back to limit switch.
 
 ### ToDo
 
 - [ ] Complete the limit switch code.
 - [ ] Tests
 - [ ] Assemly and parts
+
+´´´cpp
+  // Set the spinning direction counterclockwise (back to zero point):
+  digitalWrite(dirPin, LOW);
+
+  // 7 is limit switch pin...:
+  while (digitalRead(7) != 0) {
+    // These four lines result in 1 step:
+    digitalWrite(stepPin, HIGH);
+    delayMicroseconds(1000);
+    digitalWrite(stepPin, LOW);
+    delayMicroseconds(1000);
+  }
+´´´
+
+I think I will use this kind code to reference point.
