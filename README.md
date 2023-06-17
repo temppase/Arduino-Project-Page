@@ -77,7 +77,6 @@ I start to build arduino code
 
   // 7 is limit switch pin...:
   while (digitalRead(7) != 0) {
-    // These four lines result in 1 step:
     digitalWrite(stepPin, HIGH);
     delayMicroseconds(1000);
     digitalWrite(stepPin, LOW);
