@@ -70,7 +70,7 @@ I start to build arduino code
 - [ ] Tests
 - [ ] Assemly and parts
 
-´´´cpp
+```cpp
 
   // Set the spinning direction counterclockwise (back to zero point):
   digitalWrite(dirPin, LOW);
@@ -83,7 +83,7 @@ I start to build arduino code
     digitalWrite(stepPin, LOW);
     delayMicroseconds(1000);
   }
-  
-´´´
+
+```
 
 I think I will use this kind code to reference point.
