@@ -66,7 +66,7 @@ I start to build arduino code
 
 ### ToDo
 
-- [ ] Complete the limit switch code.
+- [x] Complete the limit switch code.
 - [ ] Tests
 - [ ] Assemly and parts
 
@@ -86,3 +86,21 @@ I start to build arduino code
 ```
 
 I think I will use this kind code to reference point.
+```cpp
+
+  // Set the spinning direction counterclockwise (back to zero point):
+  digitalWrite(dirPin, LOW);
+  if(limitSwitch.getState() != 0){
+      // 7 is limit switch pin...:
+    while (true) {
+      digitalWrite(stepPin, HIGH);
+      delayMicroseconds(1000);
+      digitalWrite(stepPin, LOW);
+      delayMicroseconds(1000);
+    }
+  }
+
+
+```
+
+This might be another option but I think that the first one is OK.
