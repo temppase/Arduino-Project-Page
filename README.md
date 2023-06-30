@@ -66,7 +66,7 @@ All the codes are available in these links.
 
 [Arduino code](https://github.com/temppase/ArduinoUnoTest/blob/main/source/UnoServer.ino)
 
-I start to build arduino code
+I start to build arduino code in the basic chat server example but turned it totaly something else. 
 
 ### Notes
 
