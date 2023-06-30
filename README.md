@@ -12,6 +12,8 @@ The purpose is to move the camera on the rail in intervals. The necessary parame
 - [x] Rail
 - [x] Limit switches 
 
+![Interface](img/Connections.jpg)
+
 ### Requirements
 
 - Start of the process possible at both ends of the rail
@@ -28,15 +30,20 @@ I'll add some images and code during the process...
 
 ### Interface
 
-![Interface](img/Interface.png)
+![Interface](img/NoArduino.png)
+![Interface](img/NoRefPoint.png)
+![Interface](img/Restart.png)
+![Interface](img/Parameters.png)
+![Interface](img/Count.png)
+![Interface](img/CountAndSend.png)
+![Interface](img/Play.png)
+
 The operation of the interface is partly based on the facts that:
 - Only functions that are allowed will be enabled.
+  - App ask restart if arduino is not available.
+  - Before user can start anything device need to run to the reference point
   - User are allowed send a data only when fields are filled.
-  - The play button is enabled when the send button is clicked. The slider and the check buttons are disabled when the send button is pressed.
-  - After the play click button changes to the pause.
-  - After pause clicked the stop button enabled and it will reset parameters and enable the slider and the check buttons.
 - Only the info button is always enabled and it will return current state.
-- The white screen will tell user current state.
 
 I think that I will add run to reference point button because now arduino will check it automaticly. 
 The problem is that so long it is drive towards reference point in loop app can't connect it.
@@ -45,15 +52,17 @@ Maybe I give a little thought first how to handle it...
 #### Requirements of app
 
 - All TextBoxes must be filled (zero if neccessary)
-- Play and pause (toggle button)
 - Stop or reset
 - Direction change and offset
 - Some info print (request response)
-- Send and recive the data in arduino 
+- Send and recive the data in arduino
+- User must be able to drive sledge to reference point
 
 ### Links
 
-[WinForm app](https://github.com/temppase/ArduinoControlApp)
+All the codes are available in these links.
+
+[WPF app](https://github.com/temppase/ArduinoControlProtoApp)
 
 [Arduino code](https://github.com/temppase/ArduinoUnoTest/blob/main/source/UnoServer.ino)
 
@@ -67,40 +76,9 @@ I start to build arduino code
 ### ToDo
 
 - [x] Complete the limit switch code.
-- [ ] Tests
-- [ ] Assemly and parts
-
-```cpp
-
-  // Set the spinning direction counterclockwise (back to zero point):
-  digitalWrite(dirPin, LOW);
-
-  // 7 is limit switch pin...:
-  while (digitalRead(7) != 0) {
-    digitalWrite(stepPin, HIGH);
-    delayMicroseconds(1000);
-    digitalWrite(stepPin, LOW);
-    delayMicroseconds(1000);
-  }
-
-```
-
-I think I will use this kind code to reference point.
-```cpp
-
-  // Set the spinning direction counterclockwise (back to zero point):
-  digitalWrite(dirPin, LOW);
-  if(limitSwitch.getState() != 0){
-      // 7 is limit switch pin...:
-    while (true) {
-      digitalWrite(stepPin, HIGH);
-      delayMicroseconds(1000);
-      digitalWrite(stepPin, LOW);
-      delayMicroseconds(1000);
-    }
-  }
+- [x] Tests
+- [ ] Assemly and parts (Comming...)
 
 
-```
 
-This might be another option but I think that the first one is OK.
+
