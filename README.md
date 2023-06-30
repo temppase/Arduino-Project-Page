@@ -70,8 +70,7 @@ I start to build arduino code
 
 ### Notes
 
-- Project isn't ready yet but I believe it will be complete in the first week of July.
-- Stepper motor drive about 2,25 mm out of the start point. That will cause zero point move if not drive back to limit switch.
+When app starts it's first try to ping arduino to check if it's available. After that it will fetch a information about the current state of device.
 
 ### ToDo
 
